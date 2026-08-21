@@ -1,6 +1,6 @@
 # 二叉树可视化（build + print）核心流程
 
-> 代码文件：`tree_printer.go`
+> 代码文件：`binary_tree_build.go`
 
 ## 1. 功能概述
 
