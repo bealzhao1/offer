@@ -28,7 +28,8 @@ func buildPreorder(arr []int, i *int) *Node {
 
 // printTree 自顶向下打印二叉树，带分支连线
 // 思路：先用中序遍历给每个节点分配横坐标 x（左子树在左、右子树在右、父节点居中于两子树之间），
-//       再按层输出节点，层与层之间画 ┌─┴─┐ 连线。
+//
+//	再按层输出节点，层与层之间画 ┌─┴─┐ 连线。
 func printTree(root *Node) {
 	xs := map[*Node]int{}
 	var nextX int
@@ -129,4 +130,12 @@ func main() {
 	root := buildPreorder(arr, &i)
 	fmt.Printf("先序消费 %d/%d 个元素\n\n", i, len(arr))
 	printTree(root)
+
+	fmt.Println("\n===== 三种遍历：递归 vs 栈 =====")
+	fmt.Println("先序(递归):", preorderRecursive(root))
+	fmt.Println("先序(栈)  :", preorderIterative(root))
+	fmt.Println("中序(递归):", inorderRecursive(root))
+	fmt.Println("中序(栈)  :", inorderIterative(root))
+	fmt.Println("后序(递归):", postorderRecursive(root))
+	fmt.Println("后序(栈)  :", postorderIterative(root))
 }
